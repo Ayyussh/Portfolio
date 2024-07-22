@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.static('public'));
 
 // POST route to handle form submission
-app.post('https://ayyushportfolio-ayyusshs-projects.vercel.app/send', (req, res) => {
+app.post('/send', (req, res) => {
   const { name, email, message } = req.body;
 
   // Create a transporter object using the default SMTP transport
