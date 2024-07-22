@@ -86,7 +86,7 @@
 
 			var form = $(this);
 			$.ajax({
-				url: baseUrl + "/send",
+				url: form.attr("action"),
 				method: form.attr("method"),
 				data: form.serialize(),
 				success: function(result) {
