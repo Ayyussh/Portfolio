@@ -94,6 +94,9 @@
 					$(".box p").css("display", "none");
 					$(".contactform").find(".output_message").addClass("success");
 					$(".output_message").text("Message Sent!");
+					setTimeout(function() {
+                        $(".output_message").text("");
+                    }, 5000);
 				},
 				error: function() {
 					$(".tabs-container").css("height", "440px");
