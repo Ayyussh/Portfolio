@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 export default function handler(req, res) {
   if (req.method === 'POST') {
-    const { name, email, message } = req.body;
+    const { name, email, message , subject} = req.body;
 
     // Create a transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
@@ -17,8 +17,8 @@ export default function handler(req, res) {
     let mailOptions = {
       from: `"${name}" <${email}>`, // sender address
       to: 'ayush.gautam0302@gmail.com',    // replace with your email address to receive form submissions
-      subject: 'Contact Us Form Submission',
-      text: `You have a new contact us form submission:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`
+      subject: subject ,
+      text: `You have a new contact us form submission:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}\nSubject: ${subject}`
     };
 
     // Send mail with defined transport object
